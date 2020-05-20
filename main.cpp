@@ -1,9 +1,13 @@
 #include <QApplication>
-#include <QGraphicsScene>
+#include "juego.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QGraphicsScene *Mapa= new QGraphicsScene;
+
+    //Se crea y se muestra el juego
+    Juego *Game = new Juego;
+    Game->show();
+
     return a.exec();
 }
