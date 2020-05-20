@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     juego.cpp \
+    jugador.cpp \
     main.cpp \
     paredes.cpp
 
 HEADERS += \
     juego.h \
+    jugador.h \
     paredes.h
 
 FORMS +=
