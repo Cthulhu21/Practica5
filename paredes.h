@@ -1,7 +1,7 @@
 #ifndef PAREDES_H
 #define PAREDES_H
 
-#include <QGraphicsRectItem>
+//#include <QGraphicsRectItem>
 #include <QGraphicsPixmapItem>
 
 class Paredes:public QObject, public QGraphicsPixmapItem

@@ -1,5 +1,5 @@
 #include "paredes.h"
 Paredes::Paredes(QGraphicsItem *parent)
 {
-    setPixmap(QPixmap(":/Pared/Laberinto.png"));
+    setPixmap(QPixmap(":/Pared/LaberintoT.png"));
 }
