@@ -22,5 +22,7 @@ Juego::Juego(QWidget *Parent)
     //Se pone al jugador
 
     Jugador *Player =new Jugador;
+    Player->setFlag(QGraphicsItem::ItemIsFocusable);
+    Player->setFocus();
     Escenario->addItem(Player);
 }

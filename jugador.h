@@ -9,6 +9,7 @@ class Jugador: public QObject, public QGraphicsPixmapItem
 {
 public:
     Jugador(QGraphicsItem *parent=0);
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // JUGADOR_H
