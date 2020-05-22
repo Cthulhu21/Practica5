@@ -13,7 +13,7 @@
         <file>SandiaR.png</file>
     </qresource>
     <qresource prefix="/Pared">
-        <file>Recursos/Laberinto.png</file>
+        <file>Laberinto.png</file>
     </qresource>
     <qresource prefix="/Personaje">
         <file>Pacman1TR.png</file>

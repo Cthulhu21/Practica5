@@ -2,5 +2,5 @@
 
 Paredes::Paredes(QGraphicsItem *parent)
 {
-    setPixmap(QPixmap(":/Pared/Recursos/Laberinto.png"));
+    setPixmap(QPixmap(":/Pared/Laberinto.png"));
 }
