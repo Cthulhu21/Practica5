@@ -7,6 +7,10 @@
         <file>Fresa.png</file>
         <file>Kiwi.png</file>
         <file>Sandia.png</file>
+        <file>FrambuesaR.png</file>
+        <file>FresaR.png</file>
+        <file>KiwiR.png</file>
+        <file>SandiaR.png</file>
     </qresource>
     <qresource prefix="/Pared">
         <file>Recursos/Laberinto.png</file>

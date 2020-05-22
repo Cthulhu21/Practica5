@@ -2,9 +2,10 @@
 #include "paredes.h"
 #include "frutos.h"
 #include <QGraphicsScene>
+#include <QGraphicsItem>
 #include "juego.h"
 
-extern Juego *juego;
+extern Juego *Game;
 
 bool Choque(QList<QGraphicsItem *>);
 
@@ -34,7 +35,7 @@ void Jugador::keyPressEvent(QKeyEvent *event)
     {
         if(typeid(*ElementosChocando[i])==typeid(Frutos))
         {
-            juego->Puntos->Incremento();
+            Game->Puntos->Incremento();
             scene()-> removeItem(ElementosChocando[i]);
             delete ElementosChocando[i];
         }

@@ -7,8 +7,6 @@
 
 using namespace std;
 
-Juego *juego;
-
 Juego::Juego(QWidget *Parent)
 {
     srand(time(NULL));

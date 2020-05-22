@@ -1,5 +1,6 @@
 #include "puntaje.h"
 #include <QFont>
+
 Puntaje::Puntaje(QGraphicsItem*parent):QGraphicsTextItem(parent)
 {
     //La iniciliza en 0;
