@@ -1,13 +1,16 @@
 #include "jugador.h"
 #include "paredes.h"
 #include "frutos.h"
+#include <QGraphicsScene>
+#include "juego.h"
+
+extern Juego *juego;
 
 bool Choque(QList<QGraphicsItem *>);
-void ChoqueFruta(QList<QGraphicsItem *>);
 
 Jugador::Jugador(QGraphicsItem *parent)
 {
-    setPixmap(QPixmap(":/Personaje/Pacman1T.png").scaled(22,22,Qt::AspectRatioMode::KeepAspectRatio));
+    setPixmap(QPixmap(":/Personaje/Pacman1TR.png"));
     setPos(512,508);
 }
 
@@ -23,9 +26,19 @@ void Jugador::keyPressEvent(QKeyEvent *event)
     {
         setX(1024);
     }
-    //Revisa que no esté chocando con el laberinto
+    //Revisa que no esté chocando con el slaberinto
     QList<QGraphicsItem *> ElementosChocando=collidingItems();
     bool ChoquePared=false;
+    //Revisa que esté chocando con una fruta
+    for(int i=0, n=ElementosChocando.size();i<n;++i)
+    {
+        if(typeid(*ElementosChocando[i])==typeid(Frutos))
+        {
+            juego->Puntos->Incremento();
+            scene()-> removeItem(ElementosChocando[i]);
+            delete ElementosChocando[i];
+        }
+    }
     ChoquePared=Choque(ElementosChocando);
     //Se mueve si no choca
     if(!ChoquePared)
@@ -67,9 +80,6 @@ void Jugador::keyPressEvent(QKeyEvent *event)
             }
         }
     }
-
-    //Revisa que esté tocando a una fruta
-    ChoqueFruta(ElementosChocando);
 }
 
 //Funcion para revisar el choque
@@ -84,5 +94,3 @@ bool Choque(QList<QGraphicsItem *> Lista)
     }
     return false;
 }
-
-void ChoqueFruta(QList<QGraphicsItem * Lista>)

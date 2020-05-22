@@ -7,6 +7,8 @@
 
 using namespace std;
 
+Juego *juego;
+
 Juego::Juego(QWidget *Parent)
 {
     srand(time(NULL));
@@ -14,7 +16,7 @@ Juego::Juego(QWidget *Parent)
     //Se crea el escenario
     Escenario =new QGraphicsScene;
     Escenario->setSceneRect(0,0,1224,688);
-    setBackgroundBrush(QBrush(QImage(":/Fondo/Fondo.jpg")));
+    setBackgroundBrush(QBrush(QImage(":/Fondos/Negro.jpg")));
 
     //Se pone el escenario
     setScene(Escenario);

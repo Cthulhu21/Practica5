@@ -6,6 +6,7 @@
 
 class Frutos: public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
 public:
     Frutos(int X=0,int Y=0,QGraphicsItem *parent=0);
 };

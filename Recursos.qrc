@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/Fondos">
+        <file>Negro.jpg</file>
+    </qresource>
+    <qresource prefix="/Frutos">
+        <file>Frambuesa.png</file>
+        <file>Fresa.png</file>
+        <file>Kiwi.png</file>
+        <file>Sandia.png</file>
+    </qresource>
+    <qresource prefix="/Pared">
+        <file>Recursos/Laberinto.png</file>
+    </qresource>
+    <qresource prefix="/Personaje">
+        <file>Pacman1TR.png</file>
+    </qresource>
+</RCC>
