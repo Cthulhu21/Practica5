@@ -35,7 +35,7 @@ void Jugador::keyPressEvent(QKeyEvent *event)
     {
         if(typeid(*ElementosChocando[i])==typeid(Frutos))
         {
-            Game->Puntos->Incremento();
+            //Game->Puntos->Incremento();
             scene()-> removeItem(ElementosChocando[i]);
             delete ElementosChocando[i];
         }

@@ -4,7 +4,7 @@
 #include "frutos.h"
 #include <list>
 #include "puntaje.h"
-
+#include "fantasmarojo.h"
 using namespace std;
 
 Juego::Juego(QWidget *Parent)
@@ -41,6 +41,11 @@ Juego::Juego(QWidget *Parent)
 
     Puntaje *puntaje=new Puntaje;
     Escenario->addItem(puntaje);
+
+    //Se ponen los fantasmas
+
+    FantasmaRojo *FR= new FantasmaRojo;
+    Escenario->addItem(FR);
 
     //Se pone al jugador
 

@@ -18,4 +18,7 @@
     <qresource prefix="/Personaje">
         <file>Pacman1TR.png</file>
     </qresource>
+    <qresource prefix="/Fantasmas">
+        <file>FantasmaRojoR.png</file>
+    </qresource>
 </RCC>

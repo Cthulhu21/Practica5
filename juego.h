@@ -4,6 +4,7 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include "puntaje.h"
+#include "jugador.h"
 
 class Juego :public QGraphicsView
 {
