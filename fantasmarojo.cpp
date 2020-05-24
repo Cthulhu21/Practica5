@@ -5,6 +5,7 @@
 
 bool Firts=true;
 int Direccion=0;
+
 list<int> MirarOpciones();
 int ElegirDireccion(list<int>);
 
@@ -27,7 +28,10 @@ void FantasmaRojo::DesplazarFantasma()
     QList<QGraphicsItem *> ElementosChoquePared=collidingItems();
     if(_Firts)
     {
+        do
+        {
         _Direccion=1+rand()%4;
+        }while(_Direccion==3);
         Firts=false;
     }
     Choque=ChoquePared(ElementosChoquePared);

@@ -4,15 +4,21 @@
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include "juego.h"
+#include <QTimer>
 
 extern Juego *Game;
+
+int _Sprite=0;
 
 bool Choque(QList<QGraphicsItem *>);
 
 Jugador::Jugador(QGraphicsItem *parent)
 {
+    QTimer *Tiempo=new QTimer;
     setPixmap(QPixmap(":/Personaje/Pacman1TR.png"));
     setPos(512,508);
+    connect(Tiempo,SIGNAL(timeout()),this,SLOT(Animar()));
+    Tiempo->start(150);
 }
 
 void Jugador::keyPressEvent(QKeyEvent *event)
@@ -47,39 +53,66 @@ void Jugador::keyPressEvent(QKeyEvent *event)
         if(event->key()==Qt::Key_Left)
         {
             setX(x()-7);
+            setTransformOriginPoint(QPoint(11,11));
+            setRotation(180);
             ElementosChocando=collidingItems(); //Revisa que después de moverlo no haya quedado dentro de la pared
             if(Choque(ElementosChocando))
             {
                 setX(x()+7);
+                //setRotation(180);
             }
         }
         else if (event->key()==Qt::Key_Right)
         {
             setX(x()+7);
+            setTransformOriginPoint(QPoint(11,11));
+            setRotation(0);
             ElementosChocando=collidingItems();
             if(Choque(ElementosChocando))
             {
                 setX(x()-7);
+                //setRotation(0);
             }
         }
         else if(event->key()==Qt::Key_Up)
         {
             setY(y()-7);
+            setTransformOriginPoint(QPoint(11,11));
+            setRotation(-90);
             ElementosChocando=collidingItems();
             if(Choque(ElementosChocando))
             {
                 setY(y()+7);
+                //setRotation(-90);
             }
         }
         else if(event->key()==Qt::Key_Down)
         {
             setY(y()+7);
+            setTransformOriginPoint(QPoint(11,11));
+            setRotation(90);
             ElementosChocando=collidingItems();
             if(Choque(ElementosChocando))
             {
                 setY(y()-7);
             }
         }
+    }
+}
+
+void Jugador::Animar()
+{
+    int Sprite=_Sprite;
+    switch (Sprite)
+    {
+    case 0:
+        setPixmap(QPixmap(":/Personaje/Pacman2TR.png"));
+        _Sprite=1;
+        break;
+    case 1:
+        setPixmap(QPixmap(":/Personaje/Pacman1TR.png"));
+        _Sprite=0;
+        break;
     }
 }
 

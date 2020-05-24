@@ -11,6 +11,8 @@ class Jugador: public QObject, public QGraphicsPixmapItem
 public:
     Jugador(QGraphicsItem *parent=0);
     void keyPressEvent(QKeyEvent *event);
+public slots:
+    void Animar();
 };
 
 #endif // JUGADOR_H

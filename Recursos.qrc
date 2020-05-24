@@ -17,6 +17,7 @@
     </qresource>
     <qresource prefix="/Personaje">
         <file>Pacman1TR.png</file>
+        <file>Pacman2TR.png</file>
     </qresource>
     <qresource prefix="/Fantasmas">
         <file>FantasmaRojoR.png</file>
