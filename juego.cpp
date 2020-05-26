@@ -5,6 +5,7 @@
 #include <list>
 #include "puntaje.h"
 #include "fantasmarojo.h"
+
 using namespace std;
 
 Juego::Juego(QWidget *Parent)
@@ -52,6 +53,8 @@ Juego::Juego(QWidget *Parent)
     Jugador *Player =new Jugador;
     Player->setFlag(QGraphicsItem::ItemIsFocusable);
     Player->setFocus();
+
     Escenario->addItem(Player);
 
+    show();
 }

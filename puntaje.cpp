@@ -3,9 +3,6 @@
 
 Puntaje::Puntaje(QGraphicsItem*parent):QGraphicsTextItem(parent)
 {
-    //La iniciliza en 0;
-    Puntuacion=0;
-
     //Fuente, color y la barra
     setPlainText(QString("Puntuacion: ") + QString::number(Puntuacion));
     setDefaultTextColor(Qt::darkMagenta);

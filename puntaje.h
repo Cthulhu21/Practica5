@@ -10,7 +10,7 @@ public:
     void Incremento();
     int ShowPuntaje();
 private:
-    int Puntuacion;
+    int Puntuacion=0;
 };
 
 #endif // PUNTAJE_H

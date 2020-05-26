@@ -33,15 +33,15 @@ void Jugador::keyPressEvent(QKeyEvent *event)
     {
         setX(1024);
     }
-    //Revisa que no esté chocando con el slaberinto
+    //Revisa que no esté chocando con el laberinto
     QList<QGraphicsItem *> ElementosChocando=collidingItems();
     bool ChoquePared=false;
     //Revisa que esté chocando con una fruta
     for(int i=0, n=ElementosChocando.size();i<n;++i)
     {
-        if(typeid(*ElementosChocando[i])==typeid(Frutos))
+        if(typeid(*(ElementosChocando[i]))==typeid(Frutos))
         {
-            //Game->Puntos->Incremento();
+            Game->Puntos->Incremento();
             scene()-> removeItem(ElementosChocando[i]);
             delete ElementosChocando[i];
         }
@@ -59,7 +59,6 @@ void Jugador::keyPressEvent(QKeyEvent *event)
             if(Choque(ElementosChocando))
             {
                 setX(x()+7);
-                //setRotation(180);
             }
         }
         else if (event->key()==Qt::Key_Right)
@@ -71,7 +70,6 @@ void Jugador::keyPressEvent(QKeyEvent *event)
             if(Choque(ElementosChocando))
             {
                 setX(x()-7);
-                //setRotation(0);
             }
         }
         else if(event->key()==Qt::Key_Up)
@@ -83,7 +81,6 @@ void Jugador::keyPressEvent(QKeyEvent *event)
             if(Choque(ElementosChocando))
             {
                 setY(y()+7);
-                //setRotation(-90);
             }
         }
         else if(event->key()==Qt::Key_Down)
